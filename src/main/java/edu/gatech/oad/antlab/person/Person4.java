@@ -1,5 +1,5 @@
 package edu.gatech.oad.antlab.person;
-
+import 
 /**
  *  A simple class for person 4
  *  returns their name and a
@@ -30,7 +30,7 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      int x = input.length;
+      int x = input.length();
 	for (int i = 0; i<x; i++) {
 		input.setCharAt(i, input.charAt(i) + 1);
 	}
