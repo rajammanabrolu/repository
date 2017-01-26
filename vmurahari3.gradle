@@ -1,6 +1,7 @@
 apply plugin: 'java'
-
-
-repositories {
-    mavenCentral()
+defaultTasks 'clean', 'build'
+dependencies {
+    runtime files('lib/resources.jar')
+    runtime fileTree(dir: 'libs', include: '*.jar')
+    compile files('lib/resources.jar')
 }
