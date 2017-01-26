@@ -1,5 +1,7 @@
-apply plugin: 'java'
 defaultTasks 'clean', 'build'
+
+apply plugin: 'java'
+
 dependencies {
     runtime files('lib/resources.jar')
     runtime fileTree(dir: 'libs', include: '*.jar')
