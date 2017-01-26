@@ -1,6 +1,16 @@
-defaultTasks 'clean', 'build'
+defaultTasks 'clean, jar, build'
 
 apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Initial-Build',
+        'Implementation-Version': '1.0',
+        'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+        'Class-Path': 'lib/resources.jar ./'
+    }
+    archiveName = "FinalBuild.jar"
+}
 
 dependencies {
     runtime files('lib/resources.jar')
