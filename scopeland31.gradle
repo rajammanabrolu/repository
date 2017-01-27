@@ -1,5 +1,10 @@
+defaultTasks   'jar'
+
 apply plugin: 'java'
-defaultTasks 'clean', 'build', 'jar'
+
+task hello << {
+    println 'Hello World'
+}
 
 jar {
     manifest {
@@ -8,9 +13,9 @@ jar {
         'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
         'Class-Path': '../../lib/resources.jar ../'
     }
-    archiveName = "M2-1.0.jar"
+    archiveName = 'M2-1.0.jar'
 }
-    
+
 dependencies {
     runtime files('lib/resources.jar')
     runtime fileTree(dir: 'libs', include: '*.jar')
