@@ -1,0 +1,23 @@
+defaultTasks   'jar'
+
+apply plugin: 'java'
+
+task hello << {
+    println 'Hello World'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Initial-Build',
+        'Implementation-Version': '1.0',
+        'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+        'Class-Path': '../../lib/resources.jar ../'
+    }
+    archiveName = 'M2-1.0.jar'
+}
+
+dependencies {
+    runtime files('lib/resources.jar')
+    runtime fileTree(dir: 'libs', include: '*.jar')
+    compile files('lib/resources.jar')
+}
